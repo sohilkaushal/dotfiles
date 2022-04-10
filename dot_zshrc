@@ -1,0 +1,35 @@
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+fi
+
+autoload -Uz compinit promptinit
+compinit
+promptinit
+
+# set bindings to nivm
+bindkey -v
+
+# common aliases
+alias vi=nvim
+alias vim=nvim
+alias ls="exa "
+alias ll="exa -l"
+alias termconf="nvim .config/alacritty/alacritty.yml"
+
+# sourcing plugins
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source ~/.bin/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.bin/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source ~/.bin/plugins/fzf-tab/fzf-tab.plugin.zsh
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# custom Path
+export PATH="$PATH:`yarn global bin`"
+
+# Pretty Prompt
+eval "$(starship init zsh)"

@@ -1,0 +1,7 @@
+require 'plugins'
+require 'settings'
+require 'keymaps'
+require 'lsp'
+require 'treesitter'
+require 'statusline'
+require 'blankline'

@@ -10,12 +10,18 @@ promptinit
 # set bindings to nivm
 bindkey -v
 
+# Exports
+
+export EDITOR="nvim"
+export VISUAL="nvim"
+
 # common aliases
 alias vi=nvim
 alias vim=nvim
 alias ls="exa "
 alias ll="exa -l"
-alias termconf="nvim .config/alacritty/alacritty.yml"
+alias termconf="$EDITOR .config/alacritty/alacritty.yml"
+alias promptconf="$EDITOR .config/starship.toml"
 
 # sourcing plugins
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

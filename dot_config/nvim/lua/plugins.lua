@@ -45,31 +45,7 @@ return require 'packer'.startup(function()
     end
   }
   -- org mode -> super alpha
-  use { 
-    "nvim-neorg/neorg",
-    config = function()
-        require('neorg').setup {
-            -- Tell Neorg what modules to load
-            load = {
-                ["core.defaults"] = {}, -- Load all the default modules
-                ["core.norg.concealer"] = {}, -- Allows for use of icons
-                ["core.norg.dirman"] = { -- Manage your directories with Neorg
-                    config = {
-                        workspaces = {
-                            my_workspace = "~/neorg"
-                        }
-                    }
-                },
-                ["core.norg,completion"] = {
-                  config = {
-                    engine = "nvim-cmp"
-                  }
-                }
-            },
-        }
-    end,
-    requires = "nvim-lua/plenary.nvim"
-  }
   use "lukas-reineke/indent-blankline.nvim"
+  use 'folke/lsp-colors.nvim' 
   end)
 

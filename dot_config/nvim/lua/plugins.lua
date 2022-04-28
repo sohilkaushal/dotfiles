@@ -46,6 +46,13 @@ return require 'packer'.startup(function()
   }
   -- org mode -> super alpha
   use "lukas-reineke/indent-blankline.nvim"
-  use 'folke/lsp-colors.nvim' 
+  use 'folke/lsp-colors.nvim'
+  use {
+    'williamboman/nvim-lsp-installer',
+  }
+  use {
+  "ray-x/lsp_signature.nvim",
+  }
+  use "folke/trouble.nvim"
   end)
 
